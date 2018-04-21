@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost:27017/nodedb');
 // sudo fuser -k 80/tcp
 // --
 // Set express configs
-process.env.PORT = process.env.PORT || 80;
+process.env.PORT = process.env.PORT || 5000;
 app.set('port', process.env.PORT);
 
 app.use(bodyParser.json());

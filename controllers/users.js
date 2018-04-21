@@ -1,6 +1,7 @@
 'use strict';
 var passport = require('passport'),
-	User = require('../models/users.js');
+	mongoose = require('mongoose'),
+	User = mongoose.model('User');
 
 
 // --
@@ -55,11 +56,12 @@ exports.logout = function(req, res, next) {
 // 
 // Get Users
 exports.getUsers = function(req, res){
+
 	User.find({}, function(err, result){
 		if(err){
 			return res.status(400).send(err);
 		}
-		if(!result.length){
+		if(!result){
 			return res.status(200).send({'data': 'No any Data'});	
 		}
 		return res.status(200).send(result);
