@@ -8,3 +8,5 @@ Run App
 -------
 node server.js
 =======
+
+npm start
